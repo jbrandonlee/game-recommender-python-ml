@@ -50,6 +50,7 @@ def get_collaborative_filtering_user_recommendations():
                 top_n_items.append(neighbor)
     
     top_n_items = list(set(top_n_items))[:int(results_size)]
+    top_n_items = [int(id) for id in top_n_items]
     return Response(json.dumps(top_n_items), mimetype='application/json')
 
 
